@@ -1,0 +1,12 @@
+C:\Users\Shyamike\Documents\Visual Studio 2008\Projects\AEIS\AEIS\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Shyamike\Documents\Visual Studio 2008\Projects\AEIS\AEIS\obj\Debug\AEIS.Main.resources
+C:\Users\Shyamike\Documents\Visual Studio 2008\Projects\AEIS\AEIS\obj\Debug\AEIS.Properties.Resources.resources
+C:\Users\Shyamike\Documents\Visual Studio 2008\Projects\AEIS\AEIS\obj\Debug\AEIS.csproj.GenerateResource.Cache
+C:\Users\Shyamike\Documents\Visual Studio 2008\Projects\AEIS\AEIS\bin\Debug\AEIS.exe
+C:\Users\Shyamike\Documents\Visual Studio 2008\Projects\AEIS\AEIS\bin\Debug\AEIS.pdb
+C:\Users\Shyamike\Documents\Visual Studio 2008\Projects\AEIS\AEIS\bin\Debug\QuickStart.dll
+C:\Users\Shyamike\Documents\Visual Studio 2008\Projects\AEIS\AEIS\bin\Debug\RadControlSpy.dll
+C:\Users\Shyamike\Documents\Visual Studio 2008\Projects\AEIS\AEIS\bin\Debug\TelerikData.dll
+C:\Users\Shyamike\Documents\Visual Studio 2008\Projects\AEIS\AEIS\obj\Debug\AEIS.exe
+C:\Users\Shyamike\Documents\Visual Studio 2008\Projects\AEIS\AEIS\obj\Debug\AEIS.pdb
+C:\Users\Shyamike\Documents\Visual Studio 2008\Projects\AEIS\AEIS\obj\Debug\AEIS.Login.resources
