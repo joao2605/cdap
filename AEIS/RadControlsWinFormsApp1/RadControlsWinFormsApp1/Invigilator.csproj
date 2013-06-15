@@ -1,0 +1,668 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BBAFD117-4F90-422A-BD71-51D1209B1ADC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AEIS</RootNamespace>
+    <AssemblyName>RadControlsWinFormsApp1</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.4.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.4.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.4.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Emgu.CV.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.Util, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Emgu.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="OMR">
+      <HintPath>.\OMR.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickStart, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="RadControlSpy, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Docking, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RadChart, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RadDock, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.RadMarkupEditor, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Scheduler, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Aqua, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Breeze, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.BreezeExtended, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Desert, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.HighContrastBlack, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Miscellaneous, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2007Black, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2007Silver, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2010, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Telerik, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Vista, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Windows7, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikData, Version=2010.2.10.713, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="WebCam_Capture, Version=1.0.2395.24959, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\WebCam_Capture.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Candidate\Candidates_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Candidate\Candidates_Home.Designer.cs">
+      <DependentUpon>Candidates_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\CandidateAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Candidate\CandidateAdd.Designer.cs">
+      <DependentUpon>CandidateAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invigilation\AlertLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invigilation\AlertLog.Designer.cs">
+      <DependentUpon>AlertLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\DBAccess.cs" />
+    <Compile Include="Database\DBHandler.cs" />
+    <Compile Include="Face Recognition\FaceReco.cs" />
+    <Compile Include="Face Recognition\FaceRecognition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Face Recognition\FaceRecognition.designer.cs">
+      <DependentUpon>FaceRecognition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Face Recognition\WebCam.cs" />
+    <Compile Include="Invigilation\InvigilationSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invigilation\InvigilationSettings.Designer.cs">
+      <DependentUpon>InvigilationSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvigilatorUpdateDelete.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InvigilatorUpdateDelete.Designer.cs">
+      <DependentUpon>InvigilatorUpdateDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvigilatorAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InvigilatorAdd.Designer.cs">
+      <DependentUpon>InvigilatorAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\DB_Connect.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MCQ\MCQMarkingSchemaAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MCQ\MCQMarkingSchemaAdd.Designer.cs">
+      <DependentUpon>MCQMarkingSchemaAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MCQ\MCQMarkingSchemaDelete.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MCQ\MCQMarkingSchemaDelete.Designer.cs">
+      <DependentUpon>MCQMarkingSchemaDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MCQ\MCQMarkingSchemaUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MCQ\MCQMarkingSchemaUpdate.Designer.cs">
+      <DependentUpon>MCQMarkingSchemaUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MCQ\MCQMarkingSchemaView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MCQ\MCQMarkingSchemaView.Designer.cs">
+      <DependentUpon>MCQMarkingSchemaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MCQ\MCQMarkingSchema_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MCQ\MCQMarkingSchema_Home.Designer.cs">
+      <DependentUpon>MCQMarkingSchema_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MCQ\OMRReader.cs" />
+    <Compile Include="Invigilation\SeatingPositions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invigilation\SeatingPositions.Designer.cs">
+      <DependentUpon>SeatingPositions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Face Recognition\EigenObjectRecognizer.cs" />
+    <Compile Include="Invigilation\ExaminationArchive.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invigilation\ExaminationArchive.Designer.cs">
+      <DependentUpon>ExaminationArchive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invigilation\ExaminationInvigilation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invigilation\ExaminationInvigilation.Designer.cs">
+      <DependentUpon>ExaminationInvigilation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MCQ\MCQAnswerSheet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MCQ\MCQAnswerSheet.Designer.cs">
+      <DependentUpon>MCQAnswerSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MCQ\MCQMarking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MCQ\MCQMarking.Designer.cs">
+      <DependentUpon>MCQMarking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\CandidateUpdateDelete.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Candidate\CandidateUpdateDelete.Designer.cs">
+      <DependentUpon>CandidateUpdateDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\CandidateView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Candidate\CandidateView.Designer.cs">
+      <DependentUpon>CandidateView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home\HelpAndSupport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home\HelpAndSupport.Designer.cs">
+      <DependentUpon>HelpAndSupport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invigilation\Examinations_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invigilation\Examinations_Home.Designer.cs">
+      <DependentUpon>Examinations_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MCQ\MCQHandling_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MCQ\MCQHandling_Home.Designer.cs">
+      <DependentUpon>MCQHandling_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MCQ\MCQReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MCQ\MCQReport.Designer.cs">
+      <DependentUpon>MCQReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Reports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home\Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Round.cs" />
+    <Compile Include="RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsWindow.Designer.cs">
+      <DependentUpon>SettingsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\demo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\demo.Designer.cs">
+      <DependentUpon>demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\User.cs" />
+    <Compile Include="Users\UserAddNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\UserAddNew.designer.cs">
+      <DependentUpon>UserAddNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UserDeleteReset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\UserDeleteReset.designer.cs">
+      <DependentUpon>UserDeleteReset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UserEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\UserEdit.designer.cs">
+      <DependentUpon>UserEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UserHandling_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\UserHandling_Home.designer.cs">
+      <DependentUpon>UserHandling_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\UserSummary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\UserSummary.designer.cs">
+      <DependentUpon>UserSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility.cs" />
+    <EmbeddedResource Include="Candidate\Candidates_Home.resx">
+      <DependentUpon>Candidates_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Candidate\CandidateAdd.resx">
+      <DependentUpon>CandidateAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invigilation\AlertLog.resx">
+      <DependentUpon>AlertLog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Face Recognition\FaceRecognition.resx">
+      <DependentUpon>FaceRecognition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invigilation\InvigilationSettings.resx">
+      <DependentUpon>InvigilationSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvigilatorUpdateDelete.resx">
+      <DependentUpon>InvigilatorUpdateDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvigilatorAdd.resx">
+      <DependentUpon>InvigilatorAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MCQ\MCQMarkingSchemaAdd.resx">
+      <DependentUpon>MCQMarkingSchemaAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MCQ\MCQMarkingSchemaDelete.resx">
+      <DependentUpon>MCQMarkingSchemaDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MCQ\MCQMarkingSchemaUpdate.resx">
+      <DependentUpon>MCQMarkingSchemaUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MCQ\MCQMarkingSchemaView.resx">
+      <DependentUpon>MCQMarkingSchemaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MCQ\MCQMarkingSchema_Home.resx">
+      <DependentUpon>MCQMarkingSchema_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invigilation\SeatingPositions.resx">
+      <DependentUpon>SeatingPositions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invigilation\ExaminationArchive.resx">
+      <DependentUpon>ExaminationArchive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invigilation\ExaminationInvigilation.resx">
+      <DependentUpon>ExaminationInvigilation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MCQ\MCQAnswerSheet.resx">
+      <DependentUpon>MCQAnswerSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MCQ\MCQMarking.resx">
+      <DependentUpon>MCQMarking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Candidate\CandidateUpdateDelete.resx">
+      <DependentUpon>CandidateUpdateDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Candidate\CandidateView.resx">
+      <DependentUpon>CandidateView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home\HelpAndSupport.resx">
+      <DependentUpon>HelpAndSupport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invigilation\Examinations_Home.resx">
+      <DependentUpon>Examinations_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MCQ\MCQHandling_Home.resx">
+      <DependentUpon>MCQHandling_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MCQ\MCQReport.resx">
+      <DependentUpon>MCQReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home\Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsWindow.resx">
+      <DependentUpon>SettingsWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\demo.resx">
+      <DependentUpon>demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\UserAddNew.resx">
+      <DependentUpon>UserAddNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\UserDeleteReset.resx">
+      <DependentUpon>UserDeleteReset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\UserEdit.resx">
+      <DependentUpon>UserEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\UserHandling_Home.resx">
+      <DependentUpon>UserHandling_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\UserSummary.resx">
+      <DependentUpon>UserSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="LastWorkBackUp.omr">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="RESULTSHEET.omr">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RadControlsWinFormsApp1.vshost.exe.manifest" />
+    <None Include="Resources\btnGradi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PannelBack.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Descript.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emails.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\face.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidePan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Newcandidate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newCan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonBack.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vieCan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edCan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mcq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\came.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\366958167_939986949c.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ResizeImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="228.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="229.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="230.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="231.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AEISConfig.xml" />
+    <Content Include="AForge.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AForge.Imaging.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AForge.Imaging.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AForge.Math.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AForge.Math.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AForge.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="cv110.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="cvaux110.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="cvextern.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="cxcore110.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DSC_0012.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="haarcascade_frontalface_default.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lc.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OMR.pdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_calib3d220.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_contrib220.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_core220.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_features2d220.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_ffmpeg220.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_flann220.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_gpu220.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_highgui220.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_imgproc220.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_legacy220.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_ml220.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_objdetect220.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_video220.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RadControlSpy.dll" />
+    <Content Include="RadControlsWinFormsApp1.exe" />
+    <Content Include="RadControlsWinFormsApp1.pdb" />
+    <Content Include="RadControlsWinFormsApp1.vshost.exe" />
+    <Content Include="rc.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sheets.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TelerikData.dll" />
+    <Content Include="WebCam_Capture.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
