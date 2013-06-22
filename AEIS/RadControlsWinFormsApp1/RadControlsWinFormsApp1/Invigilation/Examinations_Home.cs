@@ -52,5 +52,12 @@ namespace AEIS
         {
             btnExaminationArchive.ForeColor = Color.Black;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pnlMainExamination.Controls.Clear();
+            var cp = new ExaminationControlPanel();
+            pnlMainExamination.Controls.Add(cp);
+        }
     }
 }
