@@ -45,6 +45,7 @@
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.radGroupBox4 = new Telerik.WinControls.UI.RadGroupBox();
+            this.dgvExaminationList = new System.Windows.Forms.DataGridView();
             this.radGroupBox7 = new Telerik.WinControls.UI.RadGroupBox();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
             this.radGroupBox3 = new Telerik.WinControls.UI.RadGroupBox();
@@ -58,7 +59,6 @@
             this.radLabel11 = new Telerik.WinControls.UI.RadLabel();
             this.radButton5 = new Telerik.WinControls.UI.RadButton();
             this.radButton4 = new Telerik.WinControls.UI.RadButton();
-            this.dgvExaminationList = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).BeginInit();
@@ -79,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox4)).BeginInit();
             this.radGroupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExaminationList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox7)).BeginInit();
             this.radGroupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
@@ -96,7 +97,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvExaminationList)).BeginInit();
             this.SuspendLayout();
             // 
             // radGroupBox1
@@ -340,6 +340,16 @@
             this.radGroupBox4.Text = "Camera View";
             this.radGroupBox4.ThemeName = "BreezeExtended";
             // 
+            // dgvExaminationList
+            // 
+            this.dgvExaminationList.AllowUserToOrderColumns = true;
+            this.dgvExaminationList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExaminationList.Location = new System.Drawing.Point(13, 25);
+            this.dgvExaminationList.Name = "dgvExaminationList";
+            this.dgvExaminationList.Size = new System.Drawing.Size(517, 319);
+            this.dgvExaminationList.TabIndex = 0;
+            this.dgvExaminationList.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvExaminationList_CellMouseDoubleClick);
+            // 
             // radGroupBox7
             // 
             this.radGroupBox7.Controls.Add(this.radGridView1);
@@ -523,14 +533,6 @@
             this.radButton4.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.radButton4.ThemeName = "Office2010";
             // 
-            // dgvExaminationList
-            // 
-            this.dgvExaminationList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExaminationList.Location = new System.Drawing.Point(13, 25);
-            this.dgvExaminationList.Name = "dgvExaminationList";
-            this.dgvExaminationList.Size = new System.Drawing.Size(517, 319);
-            this.dgvExaminationList.TabIndex = 0;
-            // 
             // ExaminationControlPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -559,6 +561,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox4)).EndInit();
             this.radGroupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExaminationList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox7)).EndInit();
             this.radGroupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
@@ -577,7 +580,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvExaminationList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -614,6 +616,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel7;
         private Telerik.WinControls.UI.RadLabel radLabel4;
         private Telerik.WinControls.UI.RadGridView radGridView1;
-        private System.Windows.Forms.DataGridView dgvExaminationList;
+        private System.Windows.Forms.DataGridView dgvExaminationList;  
     }
 }
