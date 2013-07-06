@@ -90,8 +90,6 @@ namespace AEIS
             dsPos = DB_Connect.ExecuteQuery("SELECT HP.position_id, HP.pos_x, HP.pos_y , C.candidate_name_initials FROM examination_tab E LEFT JOIN hall_position HP ON E.exam_hall_id = HP.hall_id LEFT JOIN candidate_position CP ON HP.position_id = CP.position_id AND E.exam_id = CP.exam_id LEFT JOIN candidate_tab C ON CP.candidate_id = C.candidate_id WHERE E.exam_id = 8");
 
 
-
-
         }
 
 

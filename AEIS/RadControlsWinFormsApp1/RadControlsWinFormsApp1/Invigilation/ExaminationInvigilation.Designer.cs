@@ -397,7 +397,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = global::AEIS.Properties.Resources.stop;
-            this.button2.Location = new System.Drawing.Point(68, 87);
+            this.button2.Location = new System.Drawing.Point(99, 87);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(28, 28);
             this.button2.TabIndex = 11;
@@ -409,7 +409,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::AEIS.Properties.Resources.play2;
-            this.button1.Location = new System.Drawing.Point(13, 87);
+            this.button1.Location = new System.Drawing.Point(44, 87);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 28);
             this.button1.TabIndex = 11;
@@ -418,11 +418,11 @@
             // 
             // severetyTrack
             // 
-            this.severetyTrack.Location = new System.Drawing.Point(121, 89);
+            this.severetyTrack.Location = new System.Drawing.Point(151, 90);
             this.severetyTrack.Maximum = 99;
             this.severetyTrack.Minimum = 20;
             this.severetyTrack.Name = "severetyTrack";
-            this.severetyTrack.Size = new System.Drawing.Size(276, 31);
+            this.severetyTrack.Size = new System.Drawing.Size(227, 28);
             this.severetyTrack.SliderAreaColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(150)))), ((int)(((byte)(194)))));
             this.severetyTrack.SliderAreaColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(150)))), ((int)(((byte)(194)))));
             this.severetyTrack.TabIndex = 10;
@@ -434,7 +434,7 @@
             // radLabel14
             // 
             this.radLabel14.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel14.Location = new System.Drawing.Point(68, 118);
+            this.radLabel14.Location = new System.Drawing.Point(99, 113);
             this.radLabel14.Name = "radLabel14";
             this.radLabel14.Size = new System.Drawing.Size(31, 17);
             this.radLabel14.TabIndex = 9;
@@ -456,7 +456,7 @@
             // radLabel13
             // 
             this.radLabel13.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel13.Location = new System.Drawing.Point(13, 117);
+            this.radLabel13.Location = new System.Drawing.Point(44, 112);
             this.radLabel13.Name = "radLabel13";
             this.radLabel13.Size = new System.Drawing.Size(34, 17);
             this.radLabel13.TabIndex = 4;
@@ -466,7 +466,7 @@
             // radLabel4
             // 
             this.radLabel4.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel4.Location = new System.Drawing.Point(209, 123);
+            this.radLabel4.Location = new System.Drawing.Point(216, 118);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(82, 17);
             this.radLabel4.TabIndex = 5;

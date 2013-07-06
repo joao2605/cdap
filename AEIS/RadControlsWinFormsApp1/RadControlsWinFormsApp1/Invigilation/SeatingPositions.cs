@@ -21,7 +21,7 @@ namespace AEIS
             this.examid = id;
 
 
-            DataSet ds = DB_Connect.ExecuteQuery("SELECT C.candidate_name_initials , CP.position_id FROM candidate_position CP LEFT JOIN candidate_tab C ON CP.candidate_id = C.candidate_id WHERE CP.exam_id = "+examid+" ORDER BY CP.position_id");
+            DataSet ds = DB_Connect.ExecuteQuery("SELECT C.candidate_name_initials AS CANDIDATE, CP.position_id AS POSITION FROM candidate_position CP LEFT JOIN candidate_tab C ON CP.candidate_id = C.candidate_id WHERE CP.exam_id = " + examid + " ORDER BY CP.position_id");
             gvSeatingPositions.DataSource = ds.Tables[0];
 
             
