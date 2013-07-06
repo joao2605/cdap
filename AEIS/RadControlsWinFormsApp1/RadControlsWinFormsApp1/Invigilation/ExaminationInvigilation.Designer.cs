@@ -33,10 +33,6 @@
             this.radGroupBox2 = new Telerik.WinControls.UI.RadGroupBox();
             this.radGroupBox7 = new Telerik.WinControls.UI.RadGroupBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.lblEndTimeVal = new Telerik.WinControls.UI.RadLabel();
-            this.lblStartTimeVal = new Telerik.WinControls.UI.RadLabel();
-            this.lblEndTime = new Telerik.WinControls.UI.RadLabel();
-            this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.lblSeconds = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.lblMinits = new System.Windows.Forms.Button();
@@ -64,16 +60,13 @@
             this.dgAlerts = new System.Windows.Forms.DataGridView();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.position = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblRemianingTime = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox7)).BeginInit();
             this.radGroupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblEndTimeVal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblStartTimeVal)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblEndTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox4)).BeginInit();
             this.radGroupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageBoxFrameGrabber)).BeginInit();
@@ -88,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radButton5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgAlerts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblRemianingTime)).BeginInit();
             this.SuspendLayout();
             // 
             // radGroupBox1
@@ -140,11 +134,8 @@
             // 
             // radGroupBox7
             // 
+            this.radGroupBox7.Controls.Add(this.lblRemianingTime);
             this.radGroupBox7.Controls.Add(this.radLabel1);
-            this.radGroupBox7.Controls.Add(this.lblEndTimeVal);
-            this.radGroupBox7.Controls.Add(this.lblStartTimeVal);
-            this.radGroupBox7.Controls.Add(this.lblEndTime);
-            this.radGroupBox7.Controls.Add(this.radLabel5);
             this.radGroupBox7.Controls.Add(this.lblSeconds);
             this.radGroupBox7.Controls.Add(this.button5);
             this.radGroupBox7.Controls.Add(this.lblMinits);
@@ -176,52 +167,12 @@
             // radLabel1
             // 
             this.radLabel1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(13, 94);
+            this.radLabel1.Location = new System.Drawing.Point(28, 88);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(121, 17);
             this.radLabel1.TabIndex = 5;
             this.radLabel1.Text = "Select Examination :";
             this.radLabel1.ThemeName = "Office2007Black";
-            // 
-            // lblEndTimeVal
-            // 
-            this.lblEndTimeVal.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndTimeVal.Location = new System.Drawing.Point(242, 126);
-            this.lblEndTimeVal.Name = "lblEndTimeVal";
-            this.lblEndTimeVal.Size = new System.Drawing.Size(28, 17);
-            this.lblEndTimeVal.TabIndex = 6;
-            this.lblEndTimeVal.Text = "N/A";
-            this.lblEndTimeVal.ThemeName = "Office2007Black";
-            // 
-            // lblStartTimeVal
-            // 
-            this.lblStartTimeVal.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStartTimeVal.Location = new System.Drawing.Point(92, 126);
-            this.lblStartTimeVal.Name = "lblStartTimeVal";
-            this.lblStartTimeVal.Size = new System.Drawing.Size(28, 17);
-            this.lblStartTimeVal.TabIndex = 6;
-            this.lblStartTimeVal.Text = "N/A";
-            this.lblStartTimeVal.ThemeName = "Office2007Black";
-            // 
-            // lblEndTime
-            // 
-            this.lblEndTime.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndTime.Location = new System.Drawing.Point(170, 126);
-            this.lblEndTime.Name = "lblEndTime";
-            this.lblEndTime.Size = new System.Drawing.Size(66, 17);
-            this.lblEndTime.TabIndex = 5;
-            this.lblEndTime.Text = "End Time :";
-            this.lblEndTime.ThemeName = "Office2007Black";
-            // 
-            // radLabel5
-            // 
-            this.radLabel5.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel5.Location = new System.Drawing.Point(13, 126);
-            this.radLabel5.Name = "radLabel5";
-            this.radLabel5.Size = new System.Drawing.Size(73, 17);
-            this.radLabel5.TabIndex = 4;
-            this.radLabel5.Text = "Start Time :";
-            this.radLabel5.ThemeName = "Office2007Black";
             // 
             // lblSeconds
             // 
@@ -308,9 +259,9 @@
             // cbExam
             // 
             this.cbExam.FormattingEnabled = true;
-            this.cbExam.Location = new System.Drawing.Point(140, 94);
+            this.cbExam.Location = new System.Drawing.Point(155, 88);
             this.cbExam.Name = "cbExam";
-            this.cbExam.Size = new System.Drawing.Size(182, 21);
+            this.cbExam.Size = new System.Drawing.Size(147, 21);
             this.cbExam.TabIndex = 12;
             this.cbExam.SelectedIndexChanged += new System.EventHandler(this.cbExam_SelectedIndexChanged);
             // 
@@ -552,6 +503,20 @@
             this.position.Name = "position";
             this.position.Width = 60;
             // 
+            // lblRemianingTime
+            // 
+            this.lblRemianingTime.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRemianingTime.ForeColor = System.Drawing.Color.Crimson;
+            this.lblRemianingTime.Location = new System.Drawing.Point(47, 112);
+            this.lblRemianingTime.Name = "lblRemianingTime";
+            // 
+            // 
+            // 
+            this.lblRemianingTime.RootElement.ForeColor = System.Drawing.Color.Crimson;
+            this.lblRemianingTime.Size = new System.Drawing.Size(46, 29);
+            this.lblRemianingTime.TabIndex = 21;
+            this.lblRemianingTime.Text = "N/A";
+            // 
             // ExaminationInvigilation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -568,10 +533,6 @@
             this.radGroupBox7.ResumeLayout(false);
             this.radGroupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblEndTimeVal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblStartTimeVal)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblEndTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox4)).EndInit();
             this.radGroupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageBoxFrameGrabber)).EndInit();
@@ -587,6 +548,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radButton5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgAlerts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblRemianingTime)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -614,19 +576,16 @@
         private System.Windows.Forms.Label lblTt;
         private System.Windows.Forms.Label lblcola2;
         private System.Windows.Forms.Label lblCola1;
-        private Telerik.WinControls.UI.RadLabel radLabel5;
         private Emgu.CV.UI.ImageBox imageBoxFrameGrabber;
         private System.Windows.Forms.ComboBox cbExam;
         private System.Windows.Forms.Timer ClockTimer;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox2;
         private System.Windows.Forms.Timer AlertTimer;
         private System.Windows.Forms.Timer MinuteTimer;
-        private Telerik.WinControls.UI.RadLabel lblStartTimeVal;
-        private Telerik.WinControls.UI.RadLabel lblEndTimeVal;
-        private Telerik.WinControls.UI.RadLabel lblEndTime;
         private System.Windows.Forms.DataGridView dgAlerts;
         private System.Windows.Forms.DataGridViewTextBoxColumn type;
         private System.Windows.Forms.DataGridViewTextBoxColumn position;
         private Telerik.WinControls.UI.RadLabel radLabel1;
+        private Telerik.WinControls.UI.RadLabel lblRemianingTime;
     }
 }

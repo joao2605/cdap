@@ -54,6 +54,11 @@ namespace AEIS
         public static bool recordVideo = false;
         public static int  severetyThreshold = 30;
 
+
+        public DateTime endtime = new DateTime(2000, 01, 01, 00, 00, 00);
+        bool isStarted = false;
+
+
         static string path = "C:\\Users\\NEON\\Desktop\\";
         int excnt = 0;
         string[] vidlist = { path+"vids\\MVI_3649_1_2.avi",
@@ -81,7 +86,7 @@ namespace AEIS
             //Load haarcascades for hand detection
             face = new HaarCascade(path + "haars\\haarcascade_hand3.xml");
 
-            DataSet ds = DB_Connect.ExecuteQuery("SELECT E.exam_id , S.subject_name FROM examination_tab E LEFT JOIN subject_tab S ON E.exam_subject_id = S.subject_id");
+            DataSet ds = DB_Connect.ExecuteQuery("SELECT E.exam_id , (S.subject_name +' '+CAST(E.exam_start_time as varchar(5) )+' - '+CAST(E.exam_end_time as varchar(5) ) ) AS subject_name FROM examination_tab E LEFT JOIN subject_tab S ON E.exam_subject_id = S.subject_id");
             cbExam.DataSource = ds.Tables[0];
             cbExam.DisplayMember = "subject_name";
             cbExam.ValueMember = "exam_id";
@@ -448,7 +453,7 @@ namespace AEIS
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            isStarted = true;
             xdoc = XDocument.Load("AEISConfig.xml");
 
             grabber = new Capture(path + "vids\\MVI_3649_1_1.avi");
@@ -492,6 +497,10 @@ namespace AEIS
             lblMinits.Text = DateTime.Now.ToString("mm");
             lblSeconds.Text = DateTime.Now.ToString("ss");
             lblTt.Text = DateTime.Now.ToString("tt");
+
+            if (!endtime.Equals(new DateTime(2000, 01, 01, 00, 00, 00))) {
+                lblRemianingTime.Text = "Remaining Time : " + endtime.Subtract(DateTime.Now).ToString("mm") + " : " + endtime.Subtract(DateTime.Now).ToString("ss");
+            }
         }
 
         private void imageBoxFrameGrabber_Click(object sender, EventArgs e)
@@ -561,11 +570,11 @@ namespace AEIS
             if (examDataView[0] != null)
             {
 
-                examid = int.Parse(examDataView[0].ToString());
-                DataSet ds = DB_Connect.ExecuteQuery("SELECT E.* FROM examination_tab E WHERE E.exam_id =" + examDataView[0].ToString());
+               examid = int.Parse(examDataView[0].ToString());
+               DataSet ds = DB_Connect.ExecuteQuery("SELECT E.* FROM examination_tab E WHERE E.exam_id =" + examDataView[0].ToString());
+                
+               endtime = DateTime.Parse(ds.Tables[0].Rows[0][3].ToString());
                
-                lblStartTimeVal.Text = ds.Tables[0].Rows[0][2].ToString();
-                lblEndTimeVal.Text = ds.Tables[0].Rows[0][3].ToString();
               
             }
 
