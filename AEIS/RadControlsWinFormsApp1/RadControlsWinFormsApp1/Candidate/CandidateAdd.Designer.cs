@@ -30,7 +30,7 @@
         {
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.radGroupBox4 = new Telerik.WinControls.UI.RadGroupBox();
-            this.pnlPhoto = new System.Windows.Forms.Panel();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.btnCancel = new Telerik.WinControls.UI.RadButton();
             this.btnReset = new Telerik.WinControls.UI.RadButton();
@@ -63,6 +63,10 @@
             this.radLabel10 = new Telerik.WinControls.UI.RadLabel();
             this.txtEmail = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox4)).BeginInit();
@@ -100,6 +104,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // radGroupBox1
@@ -135,7 +143,11 @@
             // 
             // radGroupBox4
             // 
-            this.radGroupBox4.Controls.Add(this.pnlPhoto);
+            this.radGroupBox4.Controls.Add(this.pictureBox4);
+            this.radGroupBox4.Controls.Add(this.pictureBox3);
+            this.radGroupBox4.Controls.Add(this.pictureBox2);
+            this.radGroupBox4.Controls.Add(this.pictureBox1);
+            this.radGroupBox4.Controls.Add(this.btnRefresh);
             this.radGroupBox4.Controls.Add(this.btnBrowse);
             this.radGroupBox4.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radGroupBox4.FooterImageIndex = -1;
@@ -156,17 +168,19 @@
             this.radGroupBox4.Text = "Photograph";
             this.radGroupBox4.ThemeName = "BreezeExtended";
             // 
-            // pnlPhoto
+            // btnRefresh
             // 
-            this.pnlPhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlPhoto.Location = new System.Drawing.Point(13, 23);
-            this.pnlPhoto.Name = "pnlPhoto";
-            this.pnlPhoto.Size = new System.Drawing.Size(210, 144);
-            this.pnlPhoto.TabIndex = 2;
+            this.btnRefresh.Location = new System.Drawing.Point(94, 181);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(83, 181);
+            this.btnBrowse.Location = new System.Drawing.Point(13, 181);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(75, 23);
             this.btnBrowse.TabIndex = 1;
@@ -534,6 +548,54 @@
             this.radLabel4.Text = "E - mail Address :";
             this.radLabel4.ThemeName = "Office2007Black";
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Image = global::AEIS.Properties.Resources.avatar;
+            this.pictureBox4.Location = new System.Drawing.Point(13, 104);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 7;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Image = global::AEIS.Properties.Resources.avatar;
+            this.pictureBox3.Location = new System.Drawing.Point(163, 34);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Image = global::AEIS.Properties.Resources.avatar;
+            this.pictureBox2.Location = new System.Drawing.Point(88, 34);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::AEIS.Properties.Resources.avatar;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 34);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // CandidateAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -582,6 +644,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -611,7 +677,6 @@
         private Telerik.WinControls.UI.RadTextBox txtEmail;
         private System.Windows.Forms.Button btnBrowse;
         private Telerik.WinControls.UI.RadDateTimePicker dtpDOB;
-        private System.Windows.Forms.Panel pnlPhoto;
         private Telerik.WinControls.UI.RadLabel radLabel12;
         private Telerik.WinControls.UI.RadLabel radLabel11;
         private Telerik.WinControls.UI.RadLabel radLabel10;
@@ -623,5 +688,10 @@
         private Telerik.WinControls.UI.RadRadioButton rbFemale;
         private Telerik.WinControls.UI.RadLabel radLabel13;
         private Telerik.WinControls.UI.RadDropDownList ddlTitle;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

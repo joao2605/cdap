@@ -32,6 +32,7 @@
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
             this.radGroupBox2 = new Telerik.WinControls.UI.RadGroupBox();
             this.radGroupBox7 = new Telerik.WinControls.UI.RadGroupBox();
+            this.lblRemianingTime = new Telerik.WinControls.UI.RadLabel();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.lblSeconds = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -60,12 +61,12 @@
             this.dgAlerts = new System.Windows.Forms.DataGridView();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.position = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblRemianingTime = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox7)).BeginInit();
             this.radGroupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lblRemianingTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox4)).BeginInit();
             this.radGroupBox4.SuspendLayout();
@@ -81,7 +82,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radButton5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgAlerts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblRemianingTime)).BeginInit();
             this.SuspendLayout();
             // 
             // radGroupBox1
@@ -163,6 +163,19 @@
             this.radGroupBox7.Text = "Alerts Window";
             this.radGroupBox7.ThemeName = "BreezeExtended";
             this.radGroupBox7.Click += new System.EventHandler(this.radGroupBox4_Click);
+            // 
+            // lblRemianingTime
+            // 
+            this.lblRemianingTime.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRemianingTime.ForeColor = System.Drawing.Color.Crimson;
+            this.lblRemianingTime.Location = new System.Drawing.Point(47, 112);
+            this.lblRemianingTime.Name = "lblRemianingTime";
+            // 
+            // 
+            // 
+            this.lblRemianingTime.RootElement.ForeColor = System.Drawing.Color.Crimson;
+            this.lblRemianingTime.Size = new System.Drawing.Size(2, 2);
+            this.lblRemianingTime.TabIndex = 21;
             // 
             // radLabel1
             // 
@@ -345,6 +358,7 @@
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = global::AEIS.Properties.Resources.stop;
@@ -503,20 +517,6 @@
             this.position.Name = "position";
             this.position.Width = 60;
             // 
-            // lblRemianingTime
-            // 
-            this.lblRemianingTime.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRemianingTime.ForeColor = System.Drawing.Color.Crimson;
-            this.lblRemianingTime.Location = new System.Drawing.Point(47, 112);
-            this.lblRemianingTime.Name = "lblRemianingTime";
-            // 
-            // 
-            // 
-            this.lblRemianingTime.RootElement.ForeColor = System.Drawing.Color.Crimson;
-            this.lblRemianingTime.Size = new System.Drawing.Size(46, 29);
-            this.lblRemianingTime.TabIndex = 21;
-            this.lblRemianingTime.Text = "N/A";
-            // 
             // ExaminationInvigilation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -532,6 +532,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox7)).EndInit();
             this.radGroupBox7.ResumeLayout(false);
             this.radGroupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lblRemianingTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox4)).EndInit();
             this.radGroupBox4.ResumeLayout(false);
@@ -548,7 +549,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radButton5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgAlerts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblRemianingTime)).EndInit();
             this.ResumeLayout(false);
 
         }

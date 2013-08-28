@@ -14,6 +14,7 @@ using System.Diagnostics;
 using Emgu.CV.VideoSurveillance;
 using System.Xml.Linq;
 using System.Collections;
+using AEIS.Invigilation;
 
 namespace AEIS
 {
@@ -52,12 +53,14 @@ namespace AEIS
         public static bool showMotion = false;
         public static bool showGridLines = true;
         public static bool recordVideo = false;
-        public static int  severetyThreshold = 30;
+        public static int severetyThreshold = 30;
 
 
         public DateTime endtime = new DateTime(2000, 01, 01, 00, 00, 00);
         bool isStarted = false;
 
+        //GCM
+        string regID = "APA91bHZZbybyMscVw0avUKnSrmL06TNIvNg7nKyFm9Pu3yJ8TiHujS6_4PlRJ3VRIcQzh6xK0IuG5VTSRW_5XR5S8drM0NL6HLpB_C3DYzd1qvX1knlTUnd7BzhxAMOa3HgGmdgVjt00iTIhXWD4ny-TDuQvt1t9Q";
 
         static string path = "C:\\Users\\NEON\\Desktop\\";
         int excnt = 0;
@@ -114,8 +117,8 @@ namespace AEIS
                 excnt++;
                 if (excnt == 5) { excnt = 0; }
                 currentFrame = grabber.QueryFrame().Resize(520, 340, Emgu.CV.CvEnum.INTER.CV_INTER_CUBIC);
-                green1= false;green2= false;green3= false;green4= false;
-                red1= false;red2 = false;red3 = false;red4 = false;
+                green1 = false; green2 = false; green3 = false; green4 = false;
+                red1 = false; red2 = false; red3 = false; red4 = false;
             }
 
             //Convert it to Grayscale
@@ -138,21 +141,24 @@ namespace AEIS
 
                 //MessageBox.Show("wiidth " + f.rect.Width + " height " + f.rect.Height + " area " + f.rect.Width * f.rect.Height);
                 if (f.rect.Width > 80) continue;
-                
+
                 //draw the face detected in the 0th (gray) channel with blue color
-                if(showHand)
-                currentFrame.Draw(f.rect, new Bgr(Color.LightGreen), 2);
+                if (showHand)
+                    currentFrame.Draw(f.rect, new Bgr(Color.LightGreen), 2);
 
-                int nearespos = nearestPosition(f.rect.X, f.rect.Y);                
-
+                int nearespos = nearestPosition(f.rect.X, f.rect.Y);
 
                 if (helpQueue.ToArray().ToList().IndexOf(nearespos) == -1)
                 {
-                    // lbAlerts.Items.Add("Help request at #" + nearespos.ToString());
+                    //lbAlerts.Items.Add("Help request at #" + nearespos.ToString());
 
                     dgAlerts.Rows.Add("Help Request", nearespos.ToString());
                     DB_Connect.InsertQuery("INSERT INTO alert_tab(exam_id,position_id,alert_type,alert_time) VALUES(" + examid + "," + nearespos.ToString() + ",'H','" + DateTime.Now + "')");
                     dgAlerts.FirstDisplayedScrollingRowIndex = dgAlerts.RowCount - 1;
+
+                    //GCM - help
+                    //AndroidGCMPushNotification apnGCM = new AndroidGCMPushNotification();
+                    //string strResponse = apnGCM.SendNotification(regID, nearespos.ToString() + " "+ DateTime.Now, "H");
 
                     if (nearespos == 1) green1 = true;
                     else if (nearespos == 2) green2 = true;
@@ -169,9 +175,6 @@ namespace AEIS
                         helpQueue.Enqueue(nearespos);
                     }
                 }
-
-
-
             }
 
 
@@ -180,7 +183,8 @@ namespace AEIS
 
             if (captureOutput == null && xdoc.Descendants("RecordVideo").First().Value == "1")
             {
-                captureOutput = new VideoWriter(@"video" + DateTime.Now.Minute.ToString() + ".avi", (int)grabber.GetCaptureProperty(CAP_PROP.CV_CAP_PROP_FOURCC), 15, 520, 340, true);
+                MessageBox.Show("reording start");
+                captureOutput = new VideoWriter(@"video" + examid + ".avi", (int)grabber.GetCaptureProperty(CAP_PROP.CV_CAP_PROP_FOURCC), 15, 520, 340, true);
             }
 
             if (currentFrame != null && xdoc.Descendants("RecordVideo").First().Value == "1")
@@ -188,8 +192,9 @@ namespace AEIS
                 captureOutput.WriteFrame<Bgr, Byte>(currentFrame);
             }
 
-
         }
+
+
 
         private int nearestPosition(int x, int y)
         {
@@ -223,9 +228,9 @@ namespace AEIS
                 {
                     //_forgroundDetector = new BGCodeBookModel<Bgr>();
                     // _forgroundDetector = new FGDetector<Bgr>(Emgu.CV.CvEnum.FORGROUND_DETECTOR_TYPE.FGD);
-                 
-                        _forgroundDetector = new BGStatModel<Bgr>(image, Emgu.CV.CvEnum.BG_STAT_TYPE.FGD_STAT_MODEL);
-                   
+
+                    _forgroundDetector = new BGStatModel<Bgr>(image, Emgu.CV.CvEnum.BG_STAT_TYPE.FGD_STAT_MODEL);
+
                 }
 
                 _forgroundDetector.Update(image);
@@ -267,10 +272,10 @@ namespace AEIS
                 {
                     for (int i = 0; i < dsPos.Tables[0].Rows.Count; i++)
                     {
-                        if(showPos)
-                        image.Draw("# " + dsPos.Tables[0].Rows[i][0].ToString(), ref font, new Point(int.Parse(dsPos.Tables[0].Rows[i][1].ToString()) - 120, int.Parse(dsPos.Tables[0].Rows[i][2].ToString()) - 50), new Bgr(Color.Yellow));
-                        if(showNames)
-                        image.Draw(dsPos.Tables[0].Rows[i][3].ToString(), ref font, new Point(int.Parse(dsPos.Tables[0].Rows[i][1].ToString()) - 120, int.Parse(dsPos.Tables[0].Rows[i][2].ToString()) - 70), new Bgr(Color.Yellow));
+                        if (showPos)
+                            image.Draw("# " + dsPos.Tables[0].Rows[i][0].ToString(), ref font, new Point(int.Parse(dsPos.Tables[0].Rows[i][1].ToString()) - 120, int.Parse(dsPos.Tables[0].Rows[i][2].ToString()) - 50), new Bgr(Color.Yellow));
+                        if (showNames)
+                            image.Draw(dsPos.Tables[0].Rows[i][3].ToString(), ref font, new Point(int.Parse(dsPos.Tables[0].Rows[i][1].ToString()) - 120, int.Parse(dsPos.Tables[0].Rows[i][2].ToString()) - 70), new Bgr(Color.Yellow));
 
                     }
                 }
@@ -414,11 +419,11 @@ namespace AEIS
 
 
 
-                       // LineSegment2D l5 = new LineSegment2D(new Point(comp.rect.X, comp.rect.Y), new Point(comp.rect.X, comp.rect.Y));
-                       // image.Draw(l5, new Bgr(Color.Red), 10);
-                      //  image.Draw(comp.area.ToString(), ref font, new Point(comp.rect.X, comp.rect.Y), new Bgr(Color.LightGreen));
-                        if(showMotion)
-                        image.Draw(comp.rect, new Bgr(Color.Yellow), 2);
+                        // LineSegment2D l5 = new LineSegment2D(new Point(comp.rect.X, comp.rect.Y), new Point(comp.rect.X, comp.rect.Y));
+                        // image.Draw(l5, new Bgr(Color.Red), 10);
+                        //  image.Draw(comp.area.ToString(), ref font, new Point(comp.rect.X, comp.rect.Y), new Bgr(Color.LightGreen));
+                        if (showMotion)
+                            image.Draw(comp.rect, new Bgr(Color.Yellow), 2);
 
                     }
 
@@ -454,6 +459,9 @@ namespace AEIS
         private void button1_Click(object sender, EventArgs e)
         {
             isStarted = true;
+            lblRemianingTime.Visible = true;
+            button2.Enabled = true;
+            button1.Enabled = false;
             xdoc = XDocument.Load("AEISConfig.xml");
 
             grabber = new Capture(path + "vids\\MVI_3649_1_1.avi");
@@ -463,7 +471,7 @@ namespace AEIS
             //Initialize the FrameGraber event
             Application.Idle += new EventHandler(FrameGrabber);
             button1.Enabled = false;
-
+            button2.Enabled = true;
 
             ///motion detection start
             if (grabber == null)
@@ -498,8 +506,9 @@ namespace AEIS
             lblSeconds.Text = DateTime.Now.ToString("ss");
             lblTt.Text = DateTime.Now.ToString("tt");
 
-            if (!endtime.Equals(new DateTime(2000, 01, 01, 00, 00, 00))) {
-                lblRemianingTime.Text = "Remaining Time : " + endtime.Subtract(DateTime.Now).ToString("mm") + " : " + endtime.Subtract(DateTime.Now).ToString("ss");
+            if (!endtime.Equals(new DateTime(2000, 01, 01, 00, 00, 00)) && isStarted)
+            {
+                lblRemianingTime.Text = "Remaining Time : " + endtime.Subtract(DateTime.Now).ToString("hh") + " : " + endtime.Subtract(DateTime.Now).ToString("mm") + " : " + endtime.Subtract(DateTime.Now).ToString("ss");
             }
         }
 
@@ -551,6 +560,10 @@ namespace AEIS
 
                     DB_Connect.InsertQuery("INSERT INTO alert_tab(exam_id,position_id,alert_type,alert_time) VALUES(" + examid + "," + pos.pos.ToString() + ",'S','" + DateTime.Now + "')");
 
+                    //GCM cheat
+                    //AndroidGCMPushNotification apnGCM = new AndroidGCMPushNotification();
+                    //string strResponse = apnGCM.SendNotification(regID, pos.pos.ToString() + " "+ DateTime.Now, "S");
+
                     dgAlerts.FirstDisplayedScrollingRowIndex = dgAlerts.RowCount - 1;
                 }
                 motionQueue.Clear();
@@ -570,12 +583,12 @@ namespace AEIS
             if (examDataView[0] != null)
             {
 
-               examid = int.Parse(examDataView[0].ToString());
-               DataSet ds = DB_Connect.ExecuteQuery("SELECT E.* FROM examination_tab E WHERE E.exam_id =" + examDataView[0].ToString());
-                
-               endtime = DateTime.Parse(ds.Tables[0].Rows[0][3].ToString());
-               
-              
+                examid = int.Parse(examDataView[0].ToString());
+                DataSet ds = DB_Connect.ExecuteQuery("SELECT E.* FROM examination_tab E WHERE E.exam_id =" + examDataView[0].ToString());
+
+                endtime = DateTime.Parse(ds.Tables[0].Rows[0][3].ToString());
+
+
             }
 
         }
@@ -769,9 +782,12 @@ namespace AEIS
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
+            lblRemianingTime.Visible = false;
+            button1.Enabled = true;
+            button2.Enabled = false;
+            Application.Idle -= FrameGrabber;
             grabber.Dispose();
-            
+
         }
 
         private void radButton6_Click(object sender, EventArgs e)
@@ -789,7 +805,7 @@ namespace AEIS
             severetyThreshold = severetyTrack.Value;
         }
 
-       
+
 
 
 

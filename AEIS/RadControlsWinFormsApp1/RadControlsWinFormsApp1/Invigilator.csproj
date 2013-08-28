@@ -118,6 +118,12 @@
     <Compile Include="Candidate\CandidateAdd.Designer.cs">
       <DependentUpon>CandidateAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Face Recognition\FaceRecognition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Face Recognition\FaceRecognition.designer.cs">
+      <DependentUpon>FaceRecognition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Invigilation\AlertLog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,13 +133,8 @@
     <Compile Include="Database\DBAccess.cs" />
     <Compile Include="Database\DBHandler.cs" />
     <Compile Include="Face Recognition\FaceReco.cs" />
-    <Compile Include="Face Recognition\FaceRecognition.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Face Recognition\FaceRecognition.designer.cs">
-      <DependentUpon>FaceRecognition.cs</DependentUpon>
-    </Compile>
     <Compile Include="Face Recognition\WebCam.cs" />
+    <Compile Include="Invigilation\AndroidGCMPushNotification.cs" />
     <Compile Include="Invigilation\ExaminationControlPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -202,7 +203,7 @@
     <Compile Include="Invigilation\SeatingPositions.Designer.cs">
       <DependentUpon>SeatingPositions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Face Recognition\EigenObjectRecognizer.cs" />
+    <Compile Include="EigenObjectRecognizer.cs" />
     <Compile Include="Invigilation\ExaminationArchive.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -275,6 +276,12 @@
     <Compile Include="Home\Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
+    <Compile Include="Photos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Photos.designer.cs">
+      <DependentUpon>Photos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Round.cs" />
     <Compile Include="RoundButton.cs">
       <SubType>Component</SubType>
@@ -337,12 +344,12 @@
     <EmbeddedResource Include="Candidate\CandidateAdd.resx">
       <DependentUpon>CandidateAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Face Recognition\FaceRecognition.resx">
+      <DependentUpon>FaceRecognition.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Invigilation\AlertLog.resx">
       <DependentUpon>AlertLog.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Face Recognition\FaceRecognition.resx">
-      <DependentUpon>FaceRecognition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Invigilation\ExaminationControlPanel.resx">
       <DependentUpon>ExaminationControlPanel.cs</DependentUpon>
@@ -411,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MCQ\MCQReport.resx">
       <DependentUpon>MCQReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Photos.resx">
+      <DependentUpon>Photos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -12,6 +12,7 @@ namespace AEIS
     public partial class CandidateAdd : UserControl
     {
         string file = "";
+        string candidateID = "1504";
 
         public CandidateAdd()
         {
@@ -26,7 +27,7 @@ namespace AEIS
             ddlTitle.DataSource = dsTitle.Tables[0];
             ddlTitle.DisplayMember = "title_name";
             ddlTitle.ValueMember = "title_id";
-            ddlTitle.SelectedIndex = -1;              
+            //ddlTitle.SelectedIndex = -1;              
         }
 
         private void radButton2_Click(object sender, EventArgs e)
@@ -36,9 +37,9 @@ namespace AEIS
             string nameInitials = txtNameInitials.Text.ToString();
 
             int titleId = int.Parse(ddlTitle.SelectedItem.Value.ToString());
-            MessageBox.Show("" + titleId);
+           
            // DataSet dsTitleId = DB_Connect.ExecuteQuery("SELECT title_id FROM title_tab WHERE title_name = '"+ titleName +"'");
-            //int titleId = int.Parse(dsTitleId.Tables[0].Rows[0][0].ToString());
+           //int titleId = int.Parse(dsTitleId.Tables[0].Rows[0][0].ToString());
 
             string nationality = txtNationality.Text.ToString();
             DateTime dob = dtpDOB.Value;
@@ -76,21 +77,9 @@ namespace AEIS
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
-            
-            OpenFileDialog openFileDialog1 = new OpenFileDialog(); //prompts the user to open a file
-            DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog. indicate the return value of the dialog box
-            if (result == DialogResult.OK) // Test result. if the OK button is pressed
-            {
-                file = openFileDialog1.FileName.ToString();
 
-                
-                pnlPhoto.BackgroundImage = System.Drawing.Image.FromFile(file); //sets the background image of the panel
-
-                this.Invalidate(); //redraw the control
-            }
-
-
-
+            Photos PH = new Photos("1602");
+            PH.Show();
 
         }
 
@@ -110,14 +99,29 @@ namespace AEIS
             txtAddrL3.Text = "";
             txtTelNo.Text = "";
             txtEmail.Text = "";
-            rbFemale.IsChecked = false;
-            rbMale.IsChecked = false;
-            pnlPhoto.BackgroundImage = null;
+            //rbFemale.IsChecked = false;
+            //rbMale.IsChecked = false;
+            //pnlPhoto.BackgroundImage = null;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             resetFields();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                pictureBox1.ImageLocation = Application.StartupPath + "/TrainedFaces/face_" + candidateID + "_1.bmp";
+                pictureBox2.ImageLocation = Application.StartupPath + "/TrainedFaces/face_" + candidateID + "_2.bmp";
+                pictureBox3.ImageLocation = Application.StartupPath + "/TrainedFaces/face_" + candidateID + "_3.bmp";
+                pictureBox4.ImageLocation = Application.StartupPath + "/TrainedFaces/face_" + candidateID + "_4.bmp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Image loading Error..!");
+            }
         }
     }
 }

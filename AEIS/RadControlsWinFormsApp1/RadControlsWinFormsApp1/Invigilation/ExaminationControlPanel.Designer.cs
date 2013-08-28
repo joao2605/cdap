@@ -46,17 +46,6 @@
             this.dgvExaminationList = new System.Windows.Forms.DataGridView();
             this.radGroupBox7 = new Telerik.WinControls.UI.RadGroupBox();
             this.radGridView1 = new Telerik.WinControls.UI.RadGridView();
-            this.radButton4 = new Telerik.WinControls.UI.RadButton();
-            this.radButton5 = new Telerik.WinControls.UI.RadButton();
-            this.radLabel11 = new Telerik.WinControls.UI.RadLabel();
-            this.radGroupBox5 = new Telerik.WinControls.UI.RadGroupBox();
-            this.radRadioButton3 = new Telerik.WinControls.UI.RadRadioButton();
-            this.radRadioButton4 = new Telerik.WinControls.UI.RadRadioButton();
-            this.radGroupBox6 = new Telerik.WinControls.UI.RadGroupBox();
-            this.radRadioButton6 = new Telerik.WinControls.UI.RadRadioButton();
-            this.radRadioButton5 = new Telerik.WinControls.UI.RadRadioButton();
-            this.radTrackBar1 = new Telerik.WinControls.UI.RadTrackBar();
-            this.radGroupBox3 = new Telerik.WinControls.UI.RadGroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).BeginInit();
@@ -76,20 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvExaminationList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox5)).BeginInit();
-            this.radGroupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radRadioButton3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radRadioButton4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox6)).BeginInit();
-            this.radGroupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radRadioButton6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radRadioButton5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTrackBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox3)).BeginInit();
-            this.radGroupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // radGroupBox1
@@ -98,7 +73,6 @@
             this.radGroupBox1.Controls.Add(this.radGroupBox2);
             this.radGroupBox1.Controls.Add(this.radGroupBox4);
             this.radGroupBox1.Controls.Add(this.radGroupBox7);
-            this.radGroupBox1.Controls.Add(this.radGroupBox3);
             this.radGroupBox1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radGroupBox1.FooterImageIndex = -1;
             this.radGroupBox1.FooterImageKey = "";
@@ -325,14 +299,14 @@
             this.radGroupBox7.HeaderImageKey = "";
             this.radGroupBox7.HeaderMargin = new System.Windows.Forms.Padding(0);
             this.radGroupBox7.HeaderText = "Search Result";
-            this.radGroupBox7.Location = new System.Drawing.Point(359, 390);
+            this.radGroupBox7.Location = new System.Drawing.Point(13, 390);
             this.radGroupBox7.Name = "radGroupBox7";
             this.radGroupBox7.Padding = new System.Windows.Forms.Padding(10, 20, 10, 10);
             // 
             // 
             // 
             this.radGroupBox7.RootElement.Padding = new System.Windows.Forms.Padding(10, 20, 10, 10);
-            this.radGroupBox7.Size = new System.Drawing.Size(411, 148);
+            this.radGroupBox7.Size = new System.Drawing.Size(757, 148);
             this.radGroupBox7.TabIndex = 8;
             this.radGroupBox7.Text = "Search Result";
             this.radGroupBox7.ThemeName = "BreezeExtended";
@@ -349,154 +323,6 @@
             this.radGridView1.Size = new System.Drawing.Size(385, 114);
             this.radGridView1.TabIndex = 0;
             this.radGridView1.Text = "radGridView1";
-            // 
-            // radButton4
-            // 
-            this.radButton4.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radButton4.Location = new System.Drawing.Point(177, 49);
-            this.radButton4.Name = "radButton4";
-            this.radButton4.Size = new System.Drawing.Size(150, 20);
-            this.radButton4.TabIndex = 5;
-            this.radButton4.Text = "&View Log";
-            this.radButton4.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.radButton4.ThemeName = "Office2010";
-            // 
-            // radButton5
-            // 
-            this.radButton5.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radButton5.Location = new System.Drawing.Point(177, 23);
-            this.radButton5.Name = "radButton5";
-            this.radButton5.Size = new System.Drawing.Size(150, 20);
-            this.radButton5.TabIndex = 5;
-            this.radButton5.Text = "&Download Video";
-            this.radButton5.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.radButton5.ThemeName = "Office2010";
-            // 
-            // radLabel11
-            // 
-            this.radLabel11.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel11.Location = new System.Drawing.Point(66, 62);
-            this.radLabel11.Name = "radLabel11";
-            this.radLabel11.Size = new System.Drawing.Size(37, 17);
-            this.radLabel11.TabIndex = 5;
-            this.radLabel11.Text = "Zoom";
-            this.radLabel11.ThemeName = "Office2007Black";
-            // 
-            // radGroupBox5
-            // 
-            this.radGroupBox5.Controls.Add(this.radRadioButton4);
-            this.radGroupBox5.Controls.Add(this.radRadioButton3);
-            this.radGroupBox5.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radGroupBox5.FooterImageIndex = -1;
-            this.radGroupBox5.FooterImageKey = "";
-            this.radGroupBox5.HeaderImageIndex = -1;
-            this.radGroupBox5.HeaderImageKey = "";
-            this.radGroupBox5.HeaderMargin = new System.Windows.Forms.Padding(0);
-            this.radGroupBox5.HeaderText = "Grid Layout";
-            this.radGroupBox5.Location = new System.Drawing.Point(181, 92);
-            this.radGroupBox5.Name = "radGroupBox5";
-            this.radGroupBox5.Padding = new System.Windows.Forms.Padding(10, 20, 10, 10);
-            // 
-            // 
-            // 
-            this.radGroupBox5.RootElement.Padding = new System.Windows.Forms.Padding(10, 20, 10, 10);
-            this.radGroupBox5.Size = new System.Drawing.Size(134, 48);
-            this.radGroupBox5.TabIndex = 7;
-            this.radGroupBox5.Text = "Grid Layout";
-            this.radGroupBox5.ThemeName = "BreezeExtended";
-            // 
-            // radRadioButton3
-            // 
-            this.radRadioButton3.Location = new System.Drawing.Point(13, 26);
-            this.radRadioButton3.Name = "radRadioButton3";
-            this.radRadioButton3.Size = new System.Drawing.Size(54, 18);
-            this.radRadioButton3.TabIndex = 11;
-            this.radRadioButton3.Text = "On";
-            // 
-            // radRadioButton4
-            // 
-            this.radRadioButton4.Location = new System.Drawing.Point(73, 26);
-            this.radRadioButton4.Name = "radRadioButton4";
-            this.radRadioButton4.Size = new System.Drawing.Size(54, 18);
-            this.radRadioButton4.TabIndex = 11;
-            this.radRadioButton4.Text = "Off";
-            // 
-            // radGroupBox6
-            // 
-            this.radGroupBox6.Controls.Add(this.radRadioButton5);
-            this.radGroupBox6.Controls.Add(this.radRadioButton6);
-            this.radGroupBox6.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radGroupBox6.FooterImageIndex = -1;
-            this.radGroupBox6.FooterImageKey = "";
-            this.radGroupBox6.HeaderImageIndex = -1;
-            this.radGroupBox6.HeaderImageKey = "";
-            this.radGroupBox6.HeaderMargin = new System.Windows.Forms.Padding(0);
-            this.radGroupBox6.HeaderText = "Cordinate Details";
-            this.radGroupBox6.Location = new System.Drawing.Point(21, 89);
-            this.radGroupBox6.Name = "radGroupBox6";
-            this.radGroupBox6.Padding = new System.Windows.Forms.Padding(10, 20, 10, 10);
-            // 
-            // 
-            // 
-            this.radGroupBox6.RootElement.Padding = new System.Windows.Forms.Padding(10, 20, 10, 10);
-            this.radGroupBox6.Size = new System.Drawing.Size(134, 51);
-            this.radGroupBox6.TabIndex = 7;
-            this.radGroupBox6.Text = "Cordinate Details";
-            this.radGroupBox6.ThemeName = "BreezeExtended";
-            // 
-            // radRadioButton6
-            // 
-            this.radRadioButton6.Location = new System.Drawing.Point(13, 26);
-            this.radRadioButton6.Name = "radRadioButton6";
-            this.radRadioButton6.Size = new System.Drawing.Size(54, 18);
-            this.radRadioButton6.TabIndex = 11;
-            this.radRadioButton6.Text = "On";
-            // 
-            // radRadioButton5
-            // 
-            this.radRadioButton5.Location = new System.Drawing.Point(73, 26);
-            this.radRadioButton5.Name = "radRadioButton5";
-            this.radRadioButton5.Size = new System.Drawing.Size(54, 18);
-            this.radRadioButton5.TabIndex = 11;
-            this.radRadioButton5.Text = "Off";
-            // 
-            // radTrackBar1
-            // 
-            this.radTrackBar1.Location = new System.Drawing.Point(21, 26);
-            this.radTrackBar1.Name = "radTrackBar1";
-            this.radTrackBar1.Size = new System.Drawing.Size(138, 30);
-            this.radTrackBar1.SliderAreaColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(150)))), ((int)(((byte)(194)))));
-            this.radTrackBar1.SliderAreaColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(150)))), ((int)(((byte)(194)))));
-            this.radTrackBar1.TabIndex = 9;
-            this.radTrackBar1.Text = "radTrackBar1";
-            this.radTrackBar1.TicksColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(150)))), ((int)(((byte)(194)))));
-            // 
-            // radGroupBox3
-            // 
-            this.radGroupBox3.Controls.Add(this.radTrackBar1);
-            this.radGroupBox3.Controls.Add(this.radGroupBox6);
-            this.radGroupBox3.Controls.Add(this.radGroupBox5);
-            this.radGroupBox3.Controls.Add(this.radLabel11);
-            this.radGroupBox3.Controls.Add(this.radButton5);
-            this.radGroupBox3.Controls.Add(this.radButton4);
-            this.radGroupBox3.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radGroupBox3.FooterImageIndex = -1;
-            this.radGroupBox3.FooterImageKey = "";
-            this.radGroupBox3.HeaderImageIndex = -1;
-            this.radGroupBox3.HeaderImageKey = "";
-            this.radGroupBox3.HeaderMargin = new System.Windows.Forms.Padding(0);
-            this.radGroupBox3.HeaderText = "Options";
-            this.radGroupBox3.Location = new System.Drawing.Point(13, 389);
-            this.radGroupBox3.Name = "radGroupBox3";
-            this.radGroupBox3.Padding = new System.Windows.Forms.Padding(10, 20, 10, 10);
-            // 
-            // 
-            // 
-            this.radGroupBox3.RootElement.Padding = new System.Windows.Forms.Padding(10, 20, 10, 10);
-            this.radGroupBox3.Size = new System.Drawing.Size(340, 148);
-            this.radGroupBox3.TabIndex = 8;
-            this.radGroupBox3.Text = "Options";
-            this.radGroupBox3.ThemeName = "BreezeExtended";
             // 
             // ExaminationControlPanel
             // 
@@ -525,21 +351,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvExaminationList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radButton5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox5)).EndInit();
-            this.radGroupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radRadioButton3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radRadioButton4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox6)).EndInit();
-            this.radGroupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radRadioButton6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radRadioButton5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radTrackBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radGroupBox3)).EndInit();
-            this.radGroupBox3.ResumeLayout(false);
-            this.radGroupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -563,17 +374,6 @@
         private Telerik.WinControls.UI.RadLabel radLabel5;
         private System.Windows.Forms.ComboBox cbSubject;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox7;
-        private Telerik.WinControls.UI.RadGroupBox radGroupBox3;
-        private Telerik.WinControls.UI.RadTrackBar radTrackBar1;
-        private Telerik.WinControls.UI.RadGroupBox radGroupBox6;
-        private Telerik.WinControls.UI.RadRadioButton radRadioButton5;
-        private Telerik.WinControls.UI.RadRadioButton radRadioButton6;
-        private Telerik.WinControls.UI.RadGroupBox radGroupBox5;
-        private Telerik.WinControls.UI.RadRadioButton radRadioButton4;
-        private Telerik.WinControls.UI.RadRadioButton radRadioButton3;
-        private Telerik.WinControls.UI.RadLabel radLabel11;
-        private Telerik.WinControls.UI.RadButton radButton5;
-        private Telerik.WinControls.UI.RadButton radButton4;
         private Telerik.WinControls.UI.RadGridView radGridView1;  
     }
 }

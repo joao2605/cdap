@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace AEIS
 {
@@ -145,6 +147,38 @@ namespace AEIS
 
         }
 
+
+        //Get Candidate list
+        public DataSet getCandidateInfo(int canId)
+        {
+            try
+            {
+                this.connection = DBHandler.getConnection();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString());
+            }
+
+            if (connection.State.ToString() == "Closed")
+            {
+                connection.Open();
+            }
+
+            SqlCommand newCmd = connection.CreateCommand();
+            newCmd.Connection = connection;
+            newCmd.CommandType = CommandType.Text;
+            newCmd.CommandText = "select candidate_full_name,candidate_name_initials,candidate_title from candidate_tab where candidate_id ='" + canId + "';";
+
+            SqlDataAdapter da = new SqlDataAdapter(newCmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            connection.Close();
+
+            return ds;
+        }
+
         public Candidate getCandidate(int id)
         {
             //int c_id = 2;
@@ -193,6 +227,38 @@ namespace AEIS
         {
             DB_Connect.ExecuteQuery("DELETE FROM candidate_tab WHERE candidate_id = " + id + ";");
 
+        }
+
+        //Get Candidate list
+        public SqlConnection connection;
+        public DataSet getCandidateList(int exam_id)
+        {
+            try
+            {
+                this.connection = DBHandler.getConnection();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.ToString());
+            }
+
+            if (connection.State.ToString() == "Closed")
+            {
+                connection.Open();
+            }
+
+            SqlCommand newCmd = connection.CreateCommand();
+            newCmd.Connection = connection;
+            newCmd.CommandType = CommandType.Text;
+            newCmd.CommandText = "select candidate_id from candidate_exam where candidate_exam_id = '" + exam_id + "' ;";
+
+            SqlDataAdapter da = new SqlDataAdapter(newCmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            connection.Close();
+
+            return ds;
         }
 
 

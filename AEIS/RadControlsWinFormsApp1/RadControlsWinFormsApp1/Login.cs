@@ -15,9 +15,9 @@ namespace AEIS
         public SqlConnection connection;
         //Global variables
         User USR = new User();
-        string password, userlevel,username;
+        string password, userlevel, username;
         DateTime logDate, logTime;
-        
+
 
         public Login()
         {
@@ -32,7 +32,7 @@ namespace AEIS
 
         private void btnSignin_Click(object sender, EventArgs e)
         {
-            if ((txtUserId.Text == ""||txtPassWord.Text==""))
+            if ((txtUserId.Text == "" || txtPassWord.Text == ""))
             {
                 MessageBox.Show("Text fields must be filled", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -55,7 +55,7 @@ namespace AEIS
                 {
                     connection.Open();
                 }
-                
+
                 DataSet DS = USR.getPassword(txtUserId.Text);
 
                 foreach (DataRow row in DS.Tables[0].Rows)
@@ -66,13 +66,13 @@ namespace AEIS
                         password = row[1].ToString().Trim();
                         username = row[2].ToString().Trim();
                     }
-                   
+
                 }
 
                 if (EntPassword == password)
                 {
                     logDate = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-ddThh:mm:sszzz"));
-                    Main main = new Main(username,userlevel,txtUserId.Text, logDate);
+                    Main main = new Main(username, userlevel, txtUserId.Text, logDate);
                     main.Show();
                     this.Hide(); //DWHZYWAQSR 
 
@@ -87,7 +87,7 @@ namespace AEIS
                         alertLogTracker.Show();
                     }
 
-                                                                                                                                                                        
+
 
                 }
                 else
@@ -96,7 +96,7 @@ namespace AEIS
                     MessageBox.Show("Incorrect LogIn Information!Please Re-Enter Username and Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            
+
         }
     }
 }

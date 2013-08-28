@@ -84,7 +84,7 @@
             // 
             this.btnSignin.BackColor = System.Drawing.Color.Transparent;
             this.btnSignin.Font = new System.Drawing.Font("Trebuchet MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignin.Location = new System.Drawing.Point(467, 215);
+            this.btnSignin.Location = new System.Drawing.Point(382, 215);
             this.btnSignin.Name = "btnSignin";
             this.btnSignin.Size = new System.Drawing.Size(70, 24);
             this.btnSignin.TabIndex = 2;
@@ -96,7 +96,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.Font = new System.Drawing.Font("Trebuchet MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(391, 215);
+            this.btnClose.Location = new System.Drawing.Point(467, 215);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(70, 24);
             this.btnClose.TabIndex = 2;
@@ -135,7 +135,6 @@
             this.txtPassWord.Name = "txtPassWord";
             this.txtPassWord.Size = new System.Drawing.Size(155, 20);
             this.txtPassWord.TabIndex = 3;
-            this.txtPassWord.Text = "123";
             this.txtPassWord.UseSystemPasswordChar = true;
             // 
             // txtUserId

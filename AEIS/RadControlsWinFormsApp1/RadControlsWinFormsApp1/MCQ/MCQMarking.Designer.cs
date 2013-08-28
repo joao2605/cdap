@@ -221,7 +221,7 @@
             this.radButton2.Name = "radButton2";
             this.radButton2.Size = new System.Drawing.Size(122, 46);
             this.radButton2.TabIndex = 6;
-            this.radButton2.Text = "Read Reg. No.";
+            this.radButton2.Text = "Read Candidate ID";
             this.radButton2.ThemeName = "Office2010";
             this.radButton2.Click += new System.EventHandler(this.radButton2_Click);
             // 
@@ -269,14 +269,14 @@
             this.radGroupBox2.HeaderImageKey = "";
             this.radGroupBox2.HeaderMargin = new System.Windows.Forms.Padding(0);
             this.radGroupBox2.HeaderText = "Details";
-            this.radGroupBox2.Location = new System.Drawing.Point(13, 30);
+            this.radGroupBox2.Location = new System.Drawing.Point(0, 30);
             this.radGroupBox2.Name = "radGroupBox2";
             this.radGroupBox2.Padding = new System.Windows.Forms.Padding(10, 20, 10, 10);
             // 
             // 
             // 
             this.radGroupBox2.RootElement.Padding = new System.Windows.Forms.Padding(10, 20, 10, 10);
-            this.radGroupBox2.Size = new System.Drawing.Size(145, 272);
+            this.radGroupBox2.Size = new System.Drawing.Size(158, 272);
             this.radGroupBox2.TabIndex = 7;
             this.radGroupBox2.Text = "Details";
             this.radGroupBox2.ThemeName = "BreezeExtended";
@@ -284,9 +284,9 @@
             // ddlExamId
             // 
             this.ddlExamId.FilterExpression = null;
-            this.ddlExamId.Location = new System.Drawing.Point(12, 86);
+            this.ddlExamId.Location = new System.Drawing.Point(4, 86);
             this.ddlExamId.Name = "ddlExamId";
-            this.ddlExamId.Size = new System.Drawing.Size(117, 21);
+            this.ddlExamId.Size = new System.Drawing.Size(154, 20);
             this.ddlExamId.TabIndex = 6;
             this.ddlExamId.Text = "radDropDownList1";
             this.ddlExamId.ThemeName = "BreezeExtended";
@@ -296,9 +296,9 @@
             this.radLabel10.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel10.Location = new System.Drawing.Point(6, 48);
             this.radLabel10.Name = "radLabel10";
-            this.radLabel10.Size = new System.Drawing.Size(98, 17);
+            this.radLabel10.Size = new System.Drawing.Size(125, 17);
             this.radLabel10.TabIndex = 1;
-            this.radLabel10.Text = "Examination ID :";
+            this.radLabel10.Text = "Examination Details :";
             this.radLabel10.ThemeName = "Office2007Black";
             // 
             // radLabel4
@@ -306,9 +306,9 @@
             this.radLabel4.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel4.Location = new System.Drawing.Point(6, 156);
             this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(126, 17);
+            this.radLabel4.Size = new System.Drawing.Size(132, 17);
             this.radLabel4.TabIndex = 1;
-            this.radLabel4.Text = "Select Answer sheet :";
+            this.radLabel4.Text = "Select Answer scheet :";
             this.radLabel4.ThemeName = "Office2007Black";
             // 
             // radButton4
@@ -327,7 +327,7 @@
             this.txtFileName.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFileName.Location = new System.Drawing.Point(12, 197);
             this.txtFileName.Name = "txtFileName";
-            this.txtFileName.Size = new System.Drawing.Size(68, 22);
+            this.txtFileName.Size = new System.Drawing.Size(68, 19);
             this.txtFileName.TabIndex = 0;
             this.txtFileName.TabStop = false;
             this.txtFileName.ThemeName = "BreezeExtended";
